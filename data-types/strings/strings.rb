@@ -8,31 +8,28 @@ require 'minitest/pride'
 
 class StringTest < Minitest::Test
   def test_1
-    skip
     name = "alice"
     # In place of the line below, call a method on the name variable
     # defined above to acheive the expected output.
-    actual = name._____
+    actual = name.capitalize
     expected = "Alice"
 
     assert_equal expected, actual
   end
 
   def test_2
-    skip
     name = "aLiCe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
+    actual = name.upcase
     expected = "ALICE"
 
     assert_equal expected, actual
   end
 
   def test_3
-    skip
     name = "AlIcE"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
+    actual = name.downcase
     expected = "alice"
 
     assert_equal expected, actual
