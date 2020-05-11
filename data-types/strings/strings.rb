@@ -1,6 +1,5 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
 
 # There's a video walk-through of this exercise available here:
 # https://www.youtube.com/watch?v=BKqo2w0W7S0
