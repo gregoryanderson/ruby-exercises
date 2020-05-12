@@ -87,44 +87,40 @@ class ArraysTest < Minitest::Test
     band = ["Guitar", "Drums", "Bass"]
     # Call a method on the band variable to add the element "Vocals"
     # to the beginning of the array
-
+    band.unshift("Vocals")
     assert_equal ["Vocals", "Guitar", "Drums", "Bass"], band
   end
 
   def test_c
-    skip
     garden = ["Tulips", "Tomatoes", "Basil", "Peppers"]
     # Call a method to remove and return the first element from the garden array
-    first_element = garden
+    first_element = garden.shift
     assert_equal ["Tomatoes", "Basil", "Peppers"], garden
     assert_equal "Tulips", first_element
   end
 
   def test_6
-    skip
     teams = ["Rockies", "Avalanche", "Nuggets", "Broncos", "Rapids"]
     # Call a method on the teams variable to get the second, third, and fourth teams
-    some_teams = teams
+    some_teams = teams.slice(1,3)
     assert_equal ["Avalanche", "Nuggets", "Broncos"], some_teams
 
     # Now use a different method on the teams variable to get the first and second teams
-    some_teams = teams
+    some_teams = teams.slice(0..1)
     assert_equal ["Rockies", "Avalanche"], some_teams
   end
 
   def test_7
-    skip
     fourteeners = ["Pikes Peak", nil, "Mount Elbert", nil, "Mount Evans"]
     # Call a method on the fourteeners variable to remove the nils
-    fourteeners = fourteeners
+    fourteeners = fourteeners.reject { |e| e.nil? }
     assert_equal ["Pikes Peak", "Mount Elbert", "Mount Evans"], fourteeners
   end
 
   def test_8
-    skip
     pokemon = [["Squirtle", "Charmander", "Bulbasaur"], ["Pikachu"], "Staryu"]
     # Call a method on the pokemon variable to remove the nesting
-    pokemon = pokemon
+    pokemon = pokemon.flatten
     assert_equal ["Squirtle", "Charmander", "Bulbasaur", "Pikachu", "Staryu"], pokemon
   end
 
@@ -146,43 +142,39 @@ class ArraysTest < Minitest::Test
     skip
     vowels = ["a", "e", "y", "i", "o", "u", "y"]
     # Call a method on the vowels variable to remove "y"
-
+    vowels.select{ |item| item != "y" }
     assert_equal ["a", "e", "i", "o", "u"], vowels
   end
 
   def test_11
-    skip
     furniture = ["couch", "bed", "table"]
     # Call a method on the furniture variable to add the element
     # "dresser" in between the elements "couch" and "bed"
-    new_furniture = furniture
+    new_furniture = furniture.insert(1, "dresser")
     assert_equal ["couch", "dresser", "bed", "table"], new_furniture
   end
 
   def test_12
-    skip
     children = ["Sarah", "Owen", "Peter"]
     # Call a method on the children variable to combine them into
     # one string like this: "Sarah, Owen, Peter"
-    one_string = children
+    one_string = children.join(", ")
     assert_equal "Sarah, Owen, Peter", one_string
   end
 
   def test_13
-    skip
     ascending = [1,2,3,4,5]
     # Call a method on the ascending variable to create an array
     # with the elements in the opposite order
-    descending = ascending
+    descending = ascending.reverse
     assert_equal [5,4,3,2,1], descending
   end
 
   def test_14
-    skip
     dice = [1,2,3,4,5,6]
     # Call a method on the dice variable to get a random element out
     # of the array
-    roll = dice
+    roll = dice.sample
     assert roll <= 6
     assert roll >= 1
     # Note, this assertion assumes the Ruby Version is 2.4 or higher.
