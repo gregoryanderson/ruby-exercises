@@ -47,9 +47,11 @@ class HashesTest < Minitest::Test
   end
 
   def test_5
+    skip
     # In the line below, create a new hash with
     # a default value of zero
     ingredients = Hash.new("tomatoes": 0, "carrots": 0)
+    p ingredients
     p ingredients["tomatoes"]
     p ingredients[:tomatoes]
     assert_equal 0, ingredients["tomatoes"]
@@ -57,19 +59,17 @@ class HashesTest < Minitest::Test
   end
 
   def test_6
-    skip
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
     }
     # Using the books hash defined above,
     # access the value "Grapes of Wrath"  in the line below
-    grapes = ______
+    grapes = books["John Steinbeck"]
     assert_equal "Grapes of Wrath", grapes
   end
 
   def test_7
-    skip
     books = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird"
@@ -78,7 +78,6 @@ class HashesTest < Minitest::Test
     # add a new key of "Ernest Hemmingway"
     # with a value of "For Whom the Bell Tolls"
     # in the line below
-    ______
     expected = {
       "John Steinbeck" => "Grapes of Wrath",
       "Harper Lee" => "To Kill a Mockingbird",
